@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root {
+  --primaria: #E60000; /* Âmbar escuro */
+  --secundaria: #FFFAFA; /* Azul brilhante */
+  --escuro: #0F172A; /* Azul ardósia muito escuro */
+  --maisEscuro: #020617; /* Quase preto azulado */
+  --claro: #E2E8F0; /* Cinza claro frio */
+  --vidro: rgba(15, 23, 42, 0.8);
+}
+
+body{
+    background-color: var(--escuro);
+    color: var(--claro);
+}
+.Nav_bar{
+    position: fixed;
+    top: 0;
+    background: rgba(15, 23, 42, 0.8);
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem;
+}
+
+.Menu{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 3rem;
+    
+}
+
+.menu-link{
+    text-decoration: none;
+    color: var(--claro);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem;
+}
+
+.menu-link::after{
+    content: '';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--primaria),var(--maisEscuro) ,var(--secundaria));
+    transition: width 0.5s ease;
+}
+
+.menu-link:hover::after{
+    width: 100%;
+}
+
+.cabecalho{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Foto-perfil{
+    width: 350px;
+    height: 420px;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    border: 4px solid var(--vidro);
+}
+
+h1{
+    font-size: 3rem;
+    color: var(--secundaria);
+    font-weight: bold;
+    margin: 20px;
+}
+
+.p-cabecalho{
+    font-size: 2rem;
+    color: var(--claro);
+}
+
+.sobre{
+    padding: 2rem 2rem;
+}
+
+.Sobre-titulo{
+    font-size: 3rem;
+    color: var(--claro);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.Sobre-div{
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius:16px;
+    border: 1px solid var(--claro);
+    backdrop-filter: blur(25px);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.Sobre-p{
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.projetos{
+
+}
+
+.projetos-titulo{
+
+}
+
+.Projetos-caixa{
+
+}
+
+.imagem-projeto{
+    
+}

@@ -3,41 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Portfolio_dos_Anjos</title>
 </head>
 <body>
     <nav class="Nav_bar">
         <ul class="Menu">
             <li> 
-                <a href="#Inicio">Inicio</a> 
-            </li>
-        </ul>
-        <ul>
+                <a href="#Inicio" class="menu-link">Inicio</a> 
+            </li>      
             <li> 
-                <a href="#Sobre">Sobre</a> 
-            </li>
-        </ul>
-        <ul>
+                <a href="#Sobre" class="menu-link">Sobre</a> 
+            </li>      
             <li> 
-                <a href="#Projetos">Projetos</a>    
-            </li>
-        </ul>
-        <ul>
+                <a href="#Projetos" class="menu-link">Projetos</a>    
+            </li>      
             <li> 
-                <a href="#Contato">Contato</a>
+                <a href="#Contato" class="menu-link">Contato</a>
             </li>
         </ul>
     </nav>
 
-    <main id="home" class="cabecalho">
-        <div>
-            <img src="./img/joao.png" alt="Minha_foto" class="Foto_perfil">
+    <main id="Inicio" class="cabecalho">
+  
+            <img src="./img/joao.png" alt="Minha_foto" class="Foto-perfil">
             <h1>João Pedro dos Anjos Martins</h1>
-            <p>Analista de dados</p>
-        </div>
+            <p class="p-cabecalho">Analista de dados</p>
+   
     </main>
 
-    <section id="Sobre" class="Sobre">
+    <section id="Sobre" class="sobre">
         <h2 class="Sobre-titulo">Sobre mim</h2>
         <div class="Sobre-div">   
             <p class="Sobre-p">
@@ -46,22 +41,33 @@
         </div>
     </section>
 
-    <section id="Projetos" class="Projetos">
-        <h2>Meus Projetos</h2>
+    <section id="Projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
         <div class="Projetos-caixa">
             <div class="Projeto-streaming">
-                <img src="./img/streaming.png" alt="">
+                <img src="./img/streaming.png" alt="Projeto 1" class="imagem-projeto">
                 <h3 class="info-projetos">Plataforma de streaming</h3>
                 <p class="paragrafo-projetos">Análise de dados com informações precisas para tomada de decisões</p>
             </div>
 
-            <div class="">
-                <img src="./img/streaming.png" alt="">
-                <h3 class="info-projetos">Plataforma de streaming</h3>
-                <p class="paragrafo-projetos">Análise de dados com informações precisas para tomada de decisões</p>
+            <div class="Mosaico-graficos">
+                <img src="./img/mosaico.png" alt="Projeto 2" class="imagem-projeto">
+                <h3 class="info-projetos">Mosaíco de gráficos</h3>
+                <p class="paragrafo-projetos">Demonstração visual de gráficos baseados em dados</p>
             </div>
-
         </div>
+    </section>
+
+    <section id="Contato" class="contato">
+        <h2 class="contato-titulo">Contato</h2>
+        <form id="formulario" class="formulario-contato">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="nome-form">
+            </div>
+            <div class="grupo-form">
+                <textarea placeholder="Digite sua mensagem" class="campo-form"> </textarea>
+            </div>
+        </form>
     </section>
 
 
