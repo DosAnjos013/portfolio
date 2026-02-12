@@ -17,15 +17,20 @@ html{
   --claro: #E2E8F0; /* Cinza claro frio */
   --vidro: rgba(15, 23, 42, 0.8);
 }
+                                                                    /* Boddy */
 
 body{
-    background-color: var(--escuro);
+    background-color: var(--maisEscuro);
     color: var(--claro);
 }
+
+                                                                    /* Boddy */
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
+                                                                /* Menu de navegação */
 .Nav_bar{
     position: fixed;
     top: 0;
-    background: rgba(15, 23, 42, 0.8);
+    background: var(--escuro);
     width: 100%;
     z-index: 100;
     padding: 1.5rem;
@@ -62,12 +67,17 @@ body{
     width: 100%;
 }
 
+                                                                /* Menu de navegação */
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
+                                                            /* Cabeçalho + apresentação */
+
 .cabecalho{
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 80px auto;
 }
 
 .Foto-perfil{
@@ -83,7 +93,7 @@ h1{
     font-size: 3rem;
     color: var(--secundaria);
     font-weight: bold;
-    margin: 20px;
+    margin: 10px;
 }
 
 .p-cabecalho{
@@ -91,8 +101,12 @@ h1{
     color: var(--claro);
 }
 
+                                                            /* Cabeçalho + apresentação */
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
+                                                                    /* Sobre */
+
 .sobre{
-    padding: 2rem 2rem;
+    padding-bottom: 80px;
 }
 
 .Sobre-titulo{
@@ -118,17 +132,86 @@ h1{
 }
 
 .projetos{
+    padding: 4rem 2rem;
+}
 
+                                                                    /* Sobre */
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
+                                                                    /* Projetos */  
+
+.Projetos-caixa{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projetos-card{
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordas mais sutis */
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Transição mais suave */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.projetos-card:hover{
+    box-shadow: 0 10px 30px rgba(250, 250, 250, 0.5); /* Sombra no tom da sua cor primária */
+    transform: translateY(-10px);
 }
 
 .projetos-titulo{
-
-}
-
-.Projetos-caixa{
-
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
 }
 
 .imagem-projeto{
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    object-fit: cover; 
+    display: block;
+}
+
+.caixa-textos-projeto{
+    padding: 1.5rem;
+}
+
+.paragrafo-projetos{
+    color: var(--secundaria);
+    line-height: 1.25rem;
+}
+
+.info-projetos{
+    margin-bottom: 5px;
+}
+
+                                                                    /* Projetos */
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
+                                                                    /* Contato */
+
+.contato{
+
+}
+
+.contato-titulo{
+
+}
+
+.formulario-contato{
+
+}
+
+.nome-form{
+
+}
+
+.grupo-form{
     
 }
+
+                                                                    /* Contato */
