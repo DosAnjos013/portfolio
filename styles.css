@@ -88,6 +88,7 @@ body{
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
     border-radius: 50%;
     border: 4px solid var(--vidro);
+    animation: flutuar 5s ease-in-out infinite;
 }
 
 h1{
@@ -269,3 +270,38 @@ h1{
 }
 
                                                                     /* Contato */
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
+                                                                /* Fundo da pagina */
+
+.particulas{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+    background: 
+    radial-gradient(circle at 10% 20%, lightblue 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, lightblue 0%, transparent 20%),
+    var(--escuro);
+
+}
+
+                                                                /* fundo da pagina */
+/*-------------------------------------------------------------------------------------------------------------------------------------*/
+                                                                 /* Animação foto*/
+
+@keyframes flutuar {
+    0%, 100%{
+        transform:translateY(0);
+
+    }
+
+    50%{
+        transform: translateY(-20px);
+    }
+
+}
+                                                                    
