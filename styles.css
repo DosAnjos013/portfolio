@@ -12,6 +12,7 @@ html{
 :root {
   --primaria: #E60000; /* Âmbar escuro */
   --secundaria: #FFFAFA; /* Azul brilhante */
+  --terciaria: #0000FF; /* Azul Claro */
   --escuro: #0F172A; /* Azul ardósia muito escuro */
   --maisEscuro: #020617; /* Quase preto azulado */
   --claro: #E2E8F0; /* Cinza claro frio */
@@ -72,12 +73,12 @@ body{
                                                             /* Cabeçalho + apresentação */
 
 .cabecalho{
-    min-height: 80vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 80px auto;
+    padding: 100px auto;
 }
 
 .Foto-perfil{
@@ -106,6 +107,7 @@ h1{
                                                                     /* Sobre */
 
 .sobre{
+    padding-top: 40px;
     padding-bottom: 80px;
 }
 
@@ -131,13 +133,14 @@ h1{
     font-size: 1.3rem;
 }
 
-.projetos{
-    padding: 4rem 2rem;
-}
 
                                                                     /* Sobre */
 /*-------------------------------------------------------------------------------------------------------------------------------------*/
                                                                     /* Projetos */  
+                                                                    
+.projetos{
+    padding: 4rem 2rem;
+}
 
 .Projetos-caixa{
     display: grid;
@@ -160,7 +163,7 @@ h1{
 }
 
 .projetos-card:hover{
-    box-shadow: 0 10px 30px rgba(250, 250, 250, 0.5); /* Sombra no tom da sua cor primária */
+    box-shadow: 0 10px 30px rgba(250, 250, 250, 0.5);
     transform: translateY(-10px);
 }
 
@@ -196,22 +199,73 @@ h1{
 
 .contato{
 
+    padding: 6rem 2rem;
+
 }
 
 .contato-titulo{
+
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
 
 }
 
 .formulario-contato{
 
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border: 1px solid var(--claro);
+    border-radius: 16px;
+
+}   
+
+.campo-form{
+
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: var(--claro);
+    border: 1px solid var(--claro);
+    outline: none;
+
 }
 
-.nome-form{
+.campo-form:focus{
+
+    border-color: var(--escuro);
+    box-shadow: 0 10px 30px rgba(250, 250, 250, 0.2);
 
 }
 
 .grupo-form{
-    
+
+    margin-bottom: 1.5rem;
+
+}
+
+.botao-form{
+
+    color: var(--claro);
+    background: linear-gradient(45deg, rgb(11, 11, 159), var(--terciaria));
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.5s ease;
+
+}
+
+.botao-form:hover{
+
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
 }
 
                                                                     /* Contato */
