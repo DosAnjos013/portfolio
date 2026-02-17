@@ -39,7 +39,7 @@
         <h2 class="Sobre-titulo">Sobre mim</h2>
         <div class="Sobre-div">   
             <p class="Sobre-p">
-                Analista de Dados com formação em Análise e Desenvolvimento de Sistemas e especialização em Data Analytics e Inteligência Artificial Aplicada a Negócios, foco minha atuação em transformar dados em valor estratégico para a tomada de decisão. Utilizo Python e as bibliotecas Pandas e Numpy para o tratamento e manipulação de informações, além de possuir experiência em SQL Server para a gestão e consulta de bancos de dados relacionais. Complemento minhas entregas com o desenvolvimento de dashboards e visualizações de impacto no Power BI, visando otimizar processos e fornecer insights precisos que facilitem a resolução de problemas de negócio.
+                Analista de Dados com formação em Análise e Desenvolvimento de Sistemas e especialização em Data Analytics e Inteligência Artificial Aplicada a Negócios, foco minha atuação em transformar dados em valor estratégico para a tomada de decisão. Utilizo Python e as bibliotecas Pandas, Numpy e Matplotlib para o tratamento e manipulação de informações, além de possuir experiência em SQL Server para a gestão e consulta de bancos de dados relacionais. Complemento minhas entregas com o desenvolvimento de dashboards e visualizações de impacto no Power BI, visando otimizar processos e fornecer insights precisos que facilitem a resolução de problemas de negócio.
             </p>
         </div>
     </section>
@@ -50,16 +50,16 @@
             <div class="projetos-card">
                 <img src="./img/streaming.png" alt="Projeto 1" class="imagem-projeto">
                 <div class="caixa-textos-projeto">
-                    <h3 class="info-projetos">Plataforma de streaming</h3>
-                    <p class="paragrafo-projetos">Análise de dados com informações precisas para tomada de decisões</p>
+                    <h3 class="info-projetos">Análise de Comportamento e Engajamento (Streaming)</h3>
+                    <p class="paragrafo-projetos">Integração e tratamento de múltiplas bases de dados (ETL) com Python e Pandas para identificar padrões de consumo por perfil de assinante, gênero e dispositivo.</p>
                 </div>
             </div>
 
             <div class="projetos-card">
                 <img src="./img/mosaico.png" alt="Projeto 2" class="imagem-projeto">
                 <div class="caixa-textos-projeto">
-                    <h3 class="info-projetos">Mosaíco de gráficos</h3>
-                    <p class="paragrafo-projetos">Demonstração visual de gráficos baseados em dados</p>
+                    <h3 class="info-projetos">Dashboard Estratégico com Matplotlib</h3>
+                    <p class="paragrafo-projetos">Desenvolvimento de um mosaico visual para monitoramento de KPIs comerciais, integrando gráficos de linha, barras e pizza para comparar vendas físicas vs. digitais.</p>
                 </div>
             </div>
         </div>
@@ -67,13 +67,13 @@
 
     <section id="Contato" class="contato">
         <h2 class="contato-titulo">Vamos tranformar dados em valor?</h2>
-        <form id="formulario" class="formulario-contato">
+        <form id="formulario" class="formulario-contato" onsubmit="enviarWhats(event)">
 
             <div class="grupo-form">
-                <input placeholder="Nome" class="campo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
             </div>
             <div class="grupo-form">
-                <textarea placeholder="Digite sua mensagem" class="campo-form"> </textarea>
+                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="6" id="mensagem"> </textarea>
             </div>
 
             <button type="submit" class="botao-form">Solicitar um Insight</button>
@@ -81,6 +81,28 @@
         </form>
     </section>
 
+    <script>
+
+        function enviarWhats(event){
+
+            event.preventDefault()
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5513974239973';
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
+            const msgFormatada = encodeURIComponent(texto);
+
+            const url = `https://api.whatsapp.com/send?phone=${telefone}&text=${msgFormatada}`
+
+            console.log(url)
+
+            window.open(url, '_blank')
+
+        }
+
+    </script>
 
 </body>
 </html>
