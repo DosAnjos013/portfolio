@@ -4,114 +4,410 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Portfolio_dos_Anjos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <title>João Pedro dos Anjos | Analista de Dados</title>
 </head>
 <body>
 
-    <div class="particulas"></div>
+    <!-- Particle Canvas Background -->
+    <canvas id="particleCanvas"></canvas>
 
-    <nav class="Nav_bar">
-        <ul class="Menu">
-            <li> 
-                <a href="#Inicio" class="menu-link">Inicio</a> 
-            </li>      
-            <li> 
-                <a href="#Sobre" class="menu-link">Sobre</a> 
-            </li>      
-            <li> 
-                <a href="#Projetos" class="menu-link">Projetos</a>    
-            </li>      
-            <li> 
-                <a href="#Contato" class="menu-link">Contato</a>
-            </li>
-        </ul>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#inicio" class="nav-logo">&lt;JP/&gt;</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link active">Início</a></li>
+                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#projetos" class="nav-link">Projetos</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <main id="Inicio" class="cabecalho">
-  
-            <img src="./img/joao.png" alt="Minha_foto" class="Foto-perfil">
-            <h1>João Pedro dos Anjos Martins</h1>
-            <p class="p-cabecalho">Analista de dados</p>
-   
-    </main>
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="hero-image-wrapper">
+                <img src="./img/joao.png" alt="João Pedro dos Anjos Martins" class="hero-photo">
+                <div class="hero-image-ring"></div>
+            </div>
+            <h1 class="hero-title">
+                João Pedro <span class="text-accent">dos Anjos</span> Martins
+            </h1>
+            <div class="hero-subtitle-wrapper">
+                <span class="hero-subtitle-prefix">&gt;&nbsp;</span>
+                <span class="hero-subtitle" id="typingText"></span>
+                <span class="cursor">|</span>
+            </div>
+            <div class="hero-cta">
+                <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+                <a href="#contato" class="btn btn-outline">Entrar em Contato</a>
+            </div>
+        </div>
+        <a href="#sobre" class="scroll-indicator" aria-label="Rolar para baixo">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
 
-    <section id="Sobre" class="sobre">
-        <h2 class="Sobre-titulo">Sobre mim</h2>
-        <div class="Sobre-div">   
-            <p class="Sobre-p">
-                Analista de Dados com formação em Análise e Desenvolvimento de Sistemas e especialização em Data Analytics e Inteligência Artificial Aplicada a Negócios, foco minha atuação em transformar dados em valor estratégico para a tomada de decisão. Utilizo Python e as bibliotecas Pandas, Numpy e Matplotlib para o tratamento e manipulação de informações, além de possuir experiência em SQL Server para a gestão e consulta de bancos de dados relacionais. Complemento minhas entregas com o desenvolvimento de dashboards e visualizações de impacto no Power BI, visando otimizar processos e fornecer insights precisos que facilitem a resolução de problemas de negócio.
-            </p>
+    <!-- About Section -->
+    <section id="sobre" class="section about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-decoration">//</span> Sobre Mim
+            </h2>
+            <div class="about-content">
+                <div class="about-card glass-card">
+                    <p class="about-text">
+                        Analista de Dados com formação em <strong>Análise e Desenvolvimento de Sistemas</strong> e especialização em <strong>Data Analytics e Inteligência Artificial Aplicada a Negócios</strong>, foco minha atuação em transformar dados em valor estratégico para a tomada de decisão.
+                    </p>
+                    <p class="about-text">
+                        Utilizo <strong>Python</strong> e as bibliotecas <strong>Pandas</strong>, <strong>Numpy</strong> e <strong>Matplotlib</strong> para o tratamento e manipulação de informações, além de possuir experiência em <strong>SQL Server</strong> para a gestão e consulta de bancos de dados relacionais.
+                    </p>
+                    <p class="about-text">
+                        Complemento minhas entregas com o desenvolvimento de dashboards e visualizações de impacto no <strong>Power BI</strong>, visando otimizar processos e fornecer insights precisos que facilitem a resolução de problemas de negócio.
+                    </p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item glass-card">
+                        <i class="fab fa-python skill-icon"></i>
+                        <span class="skill-name">Python</span>
+                    </div>
+                    <div class="skill-item glass-card">
+                        <i class="fas fa-database skill-icon"></i>
+                        <span class="skill-name">SQL Server</span>
+                    </div>
+                    <div class="skill-item glass-card">
+                        <i class="fas fa-chart-bar skill-icon"></i>
+                        <span class="skill-name">Power BI</span>
+                    </div>
+                    <div class="skill-item glass-card">
+                        <i class="fas fa-table skill-icon"></i>
+                        <span class="skill-name">Pandas</span>
+                    </div>
+                    <div class="skill-item glass-card">
+                        <i class="fas fa-brain skill-icon"></i>
+                        <span class="skill-name">IA Aplicada</span>
+                    </div>
+                    <div class="skill-item glass-card">
+                        <i class="fas fa-robot skill-icon"></i>
+                        <span class="skill-name">RPA</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="Projetos" class="projetos">
-        <h2 class="projetos-titulo">Meus Projetos</h2>
-        <div class="Projetos-caixa">
-            <div class="projetos-card">
-                <img src="./img/streaming.png" alt="Projeto 1" class="imagem-projeto">
-                <div class="caixa-textos-projeto">
-                    <h3 class="info-projetos">Análise de Comportamento e Engajamento (Streaming)</h3>
-                    <p class="paragrafo-projetos">Integração e tratamento de múltiplas bases de dados (ETL) com Python e Pandas para identificar padrões de consumo por perfil de assinante, gênero e dispositivo.</p>
-                </div>
-            </div>
+    <!-- Projects Section -->
+    <section id="projetos" class="section projects">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-decoration">//</span> Meus Projetos
+            </h2>
+            <div class="projects-grid">
+                <article class="project-card glass-card">
+                    <div class="project-image-wrapper">
+                        <img src="./img/streaming.png" alt="Análise de Streaming" class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Pandas</span>
+                            <span class="project-tag">ETL</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Análise de Comportamento e Engajamento</h3>
+                        <p class="project-description">Integração e tratamento de múltiplas bases de dados (ETL) com Python e Pandas para identificar padrões de consumo por perfil de assinante, gênero e dispositivo.</p>
+                    </div>
+                </article>
 
-            <div class="projetos-card">
-                <img src="./img/mosaico.png" alt="Projeto 2" class="imagem-projeto">
-                <div class="caixa-textos-projeto">
-                    <h3 class="info-projetos">Dashboard Estratégico com Matplotlib</h3>
-                    <p class="paragrafo-projetos">Desenvolvimento de um mosaico visual para monitoramento de KPIs comerciais, integrando gráficos de linha, barras e pizza para comparar vendas físicas vs. digitais.</p>
-                </div>
-            </div>
+                <article class="project-card glass-card">
+                    <div class="project-image-wrapper">
+                        <img src="./img/mosaico.png" alt="Dashboard Matplotlib" class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-tag">Matplotlib</span>
+                            <span class="project-tag">KPIs</span>
+                            <span class="project-tag">Data Viz</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Dashboard Estratégico com Matplotlib</h3>
+                        <p class="project-description">Desenvolvimento de um mosaico visual para monitoramento de KPIs comerciais, integrando gráficos de linha, barras e pizza para comparar vendas físicas vs. digitais.</p>
+                    </div>
+                </article>
 
-            <div class="projetos-card">
-                <img src="./img/automacao.png" alt="Projeto 3" class="imagem-projeto">
-                <div class="caixa-textos-projeto">
-                    <h3 class="info-projetos">Automação RPA: Pipeline de Extração e Inteligência</h3>
-                    <p class="paragrafo-projetos">Desenvolvimento de um robô de automação (RPA) para extração mensal de dados de vendas de sistemas legados. A solução elimina erros manuais e prepara os dados para dashboards estratégicos, integrando o fluxo diretamente com insights visuais</p>
-                </div>
+                <article class="project-card glass-card">
+                    <div class="project-image-wrapper">
+                        <img src="./img/automacao.png" alt="Automação RPA" class="project-image">
+                        <div class="project-overlay">
+                            <span class="project-tag">RPA</span>
+                            <span class="project-tag">Automação</span>
+                            <span class="project-tag">Pipeline</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Automação RPA: Pipeline de Extração e Inteligência</h3>
+                        <p class="project-description">Desenvolvimento de um robô de automação (RPA) para extração mensal de dados de vendas de sistemas legados. A solução elimina erros manuais e prepara os dados para dashboards estratégicos.</p>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <section id="Contato" class="contato">
-        <h2 class="contato-titulo">Vamos tranformar dados em valor?</h2>
-        <form id="formulario" class="formulario-contato" onsubmit="enviarWhats(event)">
-
-            <div class="grupo-form">
-                <input placeholder="Nome" class="campo-form" id="nome">
-            </div>
-            <div class="grupo-form">
-                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="6" id="mensagem"> </textarea>
-            </div>
-
-            <button type="submit" class="botao-form">Solicitar um Insight</button>
-
-        </form>
+    <!-- Contact Section -->
+    <section id="contato" class="section contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-decoration">//</span> Vamos Transformar Dados em Valor?
+            </h2>
+            <form id="formulario" class="contact-form glass-card" onsubmit="enviarWhats(event)">
+                <div class="form-group">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" id="nome" class="form-input" placeholder="Seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem" class="form-label">Mensagem</label>
+                    <textarea id="mensagem" class="form-input form-textarea" placeholder="Escreva sua mensagem..." rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <i class="fab fa-whatsapp"></i> Solicitar um Insight
+                </button>
+            </form>
+        </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">&copy; 2025 João Pedro dos Anjos Martins. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
     <script>
+        // ========== INTERACTIVE PARTICLE BACKGROUND ==========
+        var canvas = document.getElementById('particleCanvas');
+        var ctx = canvas.getContext('2d');
+        var particles = [];
+        var mouse = { x: null, y: null, radius: 150 };
+        var animationId;
 
-        function enviarWhats(event){
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
 
-            event.preventDefault()
-
-            const nome = document.getElementById('nome').value;
-            const mensagem = document.getElementById('mensagem').value;
-            const telefone = '5513974239973';
-
-            const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
-            const msgFormatada = encodeURIComponent(texto);
-
-            const url = `https://api.whatsapp.com/send?phone=${telefone}&text=${msgFormatada}`
-
-            console.log(url)
-
-            window.open(url, '_blank')
-
+        function createParticle() {
+            return {
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 2 + 0.5,
+                speedX: (Math.random() - 0.5) * 0.8,
+                speedY: (Math.random() - 0.5) * 0.8,
+                isRed: Math.random() < 0.15,
+                opacity: Math.random() * 0.5 + 0.2
+            };
         }
 
+        function updateParticle(p) {
+            p.x += p.speedX;
+            p.y += p.speedY;
+            if (p.x > canvas.width) p.x = 0;
+            if (p.x < 0) p.x = canvas.width;
+            if (p.y > canvas.height) p.y = 0;
+            if (p.y < 0) p.y = canvas.height;
+            if (mouse.x !== null && mouse.y !== null) {
+                var dx = mouse.x - p.x;
+                var dy = mouse.y - p.y;
+                var dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < mouse.radius) {
+                    var force = (mouse.radius - dist) / mouse.radius;
+                    p.x -= dx * force * 0.02;
+                    p.y -= dy * force * 0.02;
+                }
+            }
+        }
+
+        function drawParticle(p) {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            if (p.isRed) {
+                ctx.fillStyle = 'rgba(230, 0, 0, ' + p.opacity + ')';
+            } else {
+                ctx.fillStyle = 'rgba(255, 255, 255, ' + p.opacity + ')';
+            }
+            ctx.fill();
+        }
+
+        function initParticles() {
+            particles = [];
+            var count = Math.min(Math.floor((canvas.width * canvas.height) / 8000), 150);
+            for (var i = 0; i < count; i++) {
+                particles.push(createParticle());
+            }
+        }
+        initParticles();
+        window.addEventListener('resize', initParticles);
+
+        function connectParticles() {
+            var maxDist = 120;
+            for (var a = 0; a < particles.length; a++) {
+                for (var b = a + 1; b < particles.length; b++) {
+                    var dx = particles[a].x - particles[b].x;
+                    var dy = particles[a].y - particles[b].y;
+                    var dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < maxDist) {
+                        var opacity = (1 - dist / maxDist) * 0.15;
+                        if (particles[a].isRed || particles[b].isRed) {
+                            ctx.strokeStyle = 'rgba(230, 0, 0, ' + opacity + ')';
+                        } else {
+                            ctx.strokeStyle = 'rgba(255, 255, 255, ' + opacity + ')';
+                        }
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[a].x, particles[a].y);
+                        ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (var i = 0; i < particles.length; i++) {
+                updateParticle(particles[i]);
+                drawParticle(particles[i]);
+            }
+            connectParticles();
+            animationId = requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        window.addEventListener('mousemove', function(e) {
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
+        window.addEventListener('mouseleave', function() {
+            mouse.x = null;
+            mouse.y = null;
+        });
+        window.addEventListener('touchmove', function(e) {
+            mouse.x = e.touches[0].clientX;
+            mouse.y = e.touches[0].clientY;
+        });
+        window.addEventListener('touchend', function() {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        // ========== TYPING EFFECT ==========
+        var typingTexts = [
+            'Analista de Dados',
+            'Python Developer',
+            'Power BI Specialist',
+            'Data-Driven Problem Solver'
+        ];
+        var txtIdx = 0;
+        var chrIdx = 0;
+        var deleting = false;
+        var typingEl = document.getElementById('typingText');
+
+        function typeEffect() {
+            var cur = typingTexts[txtIdx];
+            if (deleting) {
+                typingEl.textContent = cur.substring(0, chrIdx - 1);
+                chrIdx--;
+            } else {
+                typingEl.textContent = cur.substring(0, chrIdx + 1);
+                chrIdx++;
+            }
+            var spd = deleting ? 40 : 80;
+            if (!deleting && chrIdx === cur.length) {
+                spd = 2000;
+                deleting = true;
+            } else if (deleting && chrIdx === 0) {
+                deleting = false;
+                txtIdx = (txtIdx + 1) % typingTexts.length;
+                spd = 500;
+            }
+            setTimeout(typeEffect, spd);
+        }
+        typeEffect();
+
+        // ========== NAVBAR SCROLL EFFECT ==========
+        var navbarEl = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbarEl.classList.add('scrolled');
+            } else {
+                navbarEl.classList.remove('scrolled');
+            }
+        });
+
+        // ========== MOBILE MENU ==========
+        var navToggle = document.getElementById('navToggle');
+        var navMenu = document.getElementById('navMenu');
+        navToggle.addEventListener('click', function() {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-link').forEach(function(link) {
+            link.addEventListener('click', function() {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // ========== ACTIVE NAV LINK ON SCROLL ==========
+        var allSections = document.querySelectorAll('section');
+        var allNavLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', function() {
+            var current = '';
+            allSections.forEach(function(section) {
+                var sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            allNavLinks.forEach(function(link) {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // ========== SCROLL REVEAL ANIMATION ==========
+        var obsOpts = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, obsOpts);
+        document.querySelectorAll('.glass-card, .section-title, .skill-item').forEach(function(el) {
+            el.classList.add('reveal');
+            observer.observe(el);
+        });
+
+        // ========== WHATSAPP FUNCTION ==========
+        function enviarWhats(event) {
+            event.preventDefault();
+            var nome = document.getElementById('nome').value;
+            var mensagem = document.getElementById('mensagem').value;
+            var telefone = '5513974239973';
+            var texto = 'Ol\u00e1! Me chamo ' + nome + ', ' + mensagem;
+            var msgFormatada = encodeURIComponent(texto);
+            var url = 'https://api.whatsapp.com/send?phone=' + telefone + '&text=' + msgFormatada;
+            window.open(url, '_blank');
+        }
     </script>
 
 </body>
 </html>
-
