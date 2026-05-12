@@ -464,15 +464,19 @@ body {
 }
 
 .project-card-link {
+    cursor: pointer; /* Garante que todo o link mostre a mãozinha */
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: flex; /* Seguindo o ajuste de alinhamento anterior */
 }
 
 .project-card {
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .project-placeholder {
@@ -547,6 +551,9 @@ body {
 
 .project-info {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .project-title {
