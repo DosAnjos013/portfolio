@@ -308,6 +308,193 @@
     color: var(--gray-400);
 }
 
+/* Cluster Profiles */
+.cluster-profiles {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.cluster-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    transition: border-color 0.3s ease;
+}
+
+.cluster-card:hover {
+    border-color: rgba(230, 0, 0, 0.3);
+}
+
+.cluster-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.cluster-badge {
+    display: inline-block;
+    background: rgba(230, 0, 0, 0.15);
+    color: var(--red);
+    padding: 0.25rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.cluster-badge.badge-danger {
+    background: rgba(255, 80, 80, 0.15);
+    color: #ff5050;
+}
+
+.cluster-badge.badge-success {
+    background: rgba(0, 200, 120, 0.15);
+    color: #00c878;
+}
+
+.cluster-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.cluster-desc {
+    font-size: 0.95rem;
+    color: var(--gray-300);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+}
+
+.cluster-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.cluster-stat {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    padding: 0.8rem 0.5rem;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--red);
+    margin-bottom: 0.2rem;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* Strategy Grid */
+.strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.strategy-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: border-color 0.3s ease;
+}
+
+.strategy-item:hover {
+    border-color: rgba(230, 0, 0, 0.3);
+}
+
+.strategy-item h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.strategy-cluster {
+    display: inline-block;
+    background: rgba(230, 0, 0, 0.15);
+    color: var(--red);
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.strategy-cluster.cluster-danger {
+    background: rgba(255, 80, 80, 0.15);
+    color: #ff5050;
+}
+
+.strategy-cluster.cluster-success {
+    background: rgba(0, 200, 120, 0.15);
+    color: #00c878;
+}
+
+/* Code Block */
+.code-block {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 1.5rem 0;
+}
+
+.code-header {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.6rem 1.2rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.code-lang {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--gray-400);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.code-lang i {
+    color: var(--red);
+}
+
+.code-block pre {
+    padding: 1.2rem 1.5rem;
+    margin: 0;
+    overflow-x: auto;
+}
+
+.code-block code {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    color: var(--gray-300);
+    line-height: 1.7;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .project-hero-title {
@@ -324,6 +511,14 @@
 
     .detail-block {
         padding: 1.5rem;
+    }
+
+    .cluster-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .strategy-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -342,5 +537,26 @@
 
     .tech-tags {
         gap: 0.5rem;
+    }
+
+    .cluster-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .cluster-card {
+        padding: 1.2rem;
+    }
+
+    .cluster-name {
+        font-size: 1rem;
+    }
+
+    .code-block pre {
+        padding: 0.8rem 1rem;
+    }
+
+    .code-block code {
+        font-size: 0.75rem;
     }
 }

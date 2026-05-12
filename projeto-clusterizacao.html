@@ -34,9 +34,11 @@
                     <span class="project-tag">Python</span>
                     <span class="project-tag">Pandas</span>
                     <span class="project-tag">Scikit-learn</span>
+                    <span class="project-tag">K-Means</span>
+                    <span class="project-tag">Machine Learning</span>
                 </div>
                 <h1 class="project-hero-title">Clusterização de Clientes para Estratégias de Retenção e Engajamento</h1>
-                <p class="project-hero-subtitle">Utilizando Python, Pandas e Scikit-learn para segmentar clientes com base em características comportamentais e financeiras, identificando perfis distintos para ações estratégicas direcionadas.</p>
+                <p class="project-hero-subtitle">Segmentação não supervisionada de uma base com mais de 45 mil registros utilizando K-Means, identificando 3 perfis distintos de clientes e propondo ações estratégicas de marketing, retenção e vendas para cada segmento.</p>
             </div>
             <div class="project-hero-image">
                 <img src="img/clusterizacao_portfolio.png" alt="Clusterização de Clientes">
@@ -48,48 +50,248 @@
         <div class="container">
 
             <div class="detail-block glass-card">
-                <h2 class="detail-title"><i class="fas fa-bullseye"></i> Objetivo</h2>
-                <p>O objetivo deste projeto foi aplicar técnicas de <strong>Machine Learning não supervisionado</strong> para segmentar a base de clientes em grupos homogêneos, permitindo à empresa direcionar estratégias de retenção e engajamento de forma personalizada e baseada em dados.</p>
+                <h2 class="detail-title"><i class="fas fa-building"></i> Contexto</h2>
+                <p>Este projeto foi desenvolvido como <strong>avaliação obrigatória</strong> da pós-graduação em <strong>Data Analytics e Inteligência Artificial Aplicada a Negócios</strong>, realizado de forma individual e autônoma, consultando apenas o material estudado durante o curso e um case prático desenvolvido anteriormente.</p>
+                <p>O cenário aborda uma empresa que precisava entender melhor o comportamento de seus clientes para direcionar ações de <strong>retenção, engajamento e vendas</strong> de forma personalizada. A base de dados continha <strong>45.815 registros</strong> com informações transacionais, comportamentais e de pagamento.</p>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-crosshairs"></i> O Desafio</h2>
+                <p>O projeto buscou responder às seguintes perguntas de negócio:</p>
+                <ol class="questions-list">
+                    <li>Quantos grupos distintos de clientes existem na base? Qual critério foi usado para essa escolha?</li>
+                    <li>Qual é o perfil de cada grupo? (acessos, inatividade, forma de pagamento, recorrência, parcelamento)</li>
+                    <li>Existe algum grupo que se destaca positivamente? E negativamente? Por quê?</li>
+                    <li>Existem clientes com plano recorrente que não acessam a plataforma? Qual o tamanho desse grupo?</li>
+                    <li>Que ações de marketing, retenção ou vendas a empresa deveria adotar para cada grupo?</li>
+                    <li>Se um novo cliente se cadastrar amanhã, como classificá-lo automaticamente em um dos grupos?</li>
+                </ol>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-database"></i> Features Utilizadas</h2>
+                <p>Foram selecionadas <strong>7 variáveis</strong> divididas em dois eixos para a clusterização:</p>
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Feature</th><th>Eixo</th><th>Descrição</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>n_acessos</td><td>Comportamento</td><td>Quantidade de acessos do cliente à plataforma</td></tr>
+                        <tr><td>Dias sem Acessar</td><td>Comportamento</td><td>Dias de inatividade desde o último acesso</td></tr>
+                        <tr><td>ativo_tratado</td><td>Comportamento</td><td>Status de atividade do cliente (binário)</td></tr>
+                        <tr><td>TOTAL_PARCELAS</td><td>Financeiro</td><td>Número total de parcelas contratadas</td></tr>
+                        <tr><td>RECORRENTE</td><td>Financeiro</td><td>Indica se o pagamento é recorrente (assinatura)</td></tr>
+                        <tr><td>Tipo Pagamento</td><td>Financeiro</td><td>Forma de pagamento utilizada (codificado)</td></tr>
+                        <tr><td>RENOVACAO</td><td>Financeiro</td><td>Indica se o cliente renovou a assinatura</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <div class="detail-block glass-card">
                 <h2 class="detail-title"><i class="fas fa-code"></i> Metodologia</h2>
                 <div class="methodology-grid">
                     <div class="method-item">
-                        <h3>1. Pré-processamento</h3>
-                        <p>Limpeza, tratamento de valores nulos e normalização dos dados para garantir qualidade na segmentação.</p>
+                        <h3>1. Importação e Exploração</h3>
+                        <p>Importação da base com 45.815 registros e 28 colunas, tratamento de variáveis categóricas (ativo → binário) e exploração inicial dos dados.</p>
                     </div>
                     <div class="method-item">
                         <h3>2. Seleção de Features</h3>
-                        <p>Identificação e seleção das features comportamentais e financeiras mais relevantes para a clusterização.</p>
+                        <p>Seleção de 7 variáveis-chave divididas em dois eixos: <strong>comportamental</strong> (acessos, inatividade, status ativo) e <strong>financeiro</strong> (parcelas, recorrência, pagamento, renovação).</p>
                     </div>
                     <div class="method-item">
-                        <h3>3. Determinação de Clusters</h3>
-                        <p>Utilização do método Elbow e Silhouette Score para determinar o número ideal de clusters.</p>
+                        <h3>3. Pré-processamento</h3>
+                        <p>Padronização dos dados com <strong>StandardScaler</strong> para eliminar diferenças de escala e garantir que nenhuma feature domine a clusterização.</p>
                     </div>
                     <div class="method-item">
-                        <h3>4. Análise dos Segmentos</h3>
-                        <p>Interpretação e caracterização de cada cluster, identificando padrões de comportamento e necessidades únicas.</p>
+                        <h3>4. Método Elbow</h3>
+                        <p>Avaliação da inércia (WCSS) para K de 1 a 9, identificando <strong>K=3</strong> como o ponto de maior inflexão da curva, indicando o número ideal de clusters.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>5. K-Means (K=3)</h3>
+                        <p>Treinamento do modelo K-Means com 3 clusters e <code>random_state=42</code>, atribuindo cada cliente a um dos segmentos identificados.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>6. Análise de Perfis</h3>
+                        <p>Análise agregada por cluster com estatísticas descritivas (média, mediana) das features e identificação de formas de pagamento predominantes.</p>
                     </div>
                 </div>
             </div>
 
             <div class="detail-block glass-card">
-                <h2 class="detail-title"><i class="fas fa-chart-line"></i> Principais Resultados</h2>
+                <h2 class="detail-title"><i class="fas fa-chart-line"></i> Resultados em Números</h2>
                 <div class="results-grid">
                     <div class="result-item">
+                        <span class="result-highlight">45.815</span>
+                        <span class="result-label">Registros de clientes analisados na base</span>
+                    </div>
+                    <div class="result-item">
                         <span class="result-highlight">3</span>
-                        <span class="result-label">Segmentos de clientes identificados com características únicas</span>
+                        <span class="result-label">Segmentos distintos identificados via K-Means</span>
                     </div>
                     <div class="result-item">
-                        <span class="result-highlight">K-Means</span>
-                        <span class="result-label">Algoritmo de clusterização utilizado para segmentação</span>
+                        <span class="result-highlight">8.025</span>
+                        <span class="result-label">Clientes recorrentes inativos detectados</span>
                     </div>
                     <div class="result-item">
-                        <span class="result-highlight">Personalização</span>
-                        <span class="result-label">Ações estratégicas direcionadas para cada perfil de cliente</span>
+                        <span class="result-highlight">99,85%</span>
+                        <span class="result-label">Taxa de renovação do cluster de clientes leais</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-highlight">0%</span>
+                        <span class="result-label">Renovação no cluster de risco — alto churn</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-highlight">7</span>
+                        <span class="result-label">Features selecionadas (comportamentais + financeiras)</span>
                     </div>
                 </div>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-users"></i> Perfis dos Clusters</h2>
+
+                <div class="cluster-profiles">
+                    <div class="cluster-card cluster-0">
+                        <div class="cluster-header">
+                            <span class="cluster-badge">Cluster 0</span>
+                            <h3 class="cluster-name">Compradores Pontuais de Baixo Engajamento</h3>
+                        </div>
+                        <p class="cluster-desc">Clientes que realizam compras pontuais, geralmente em uma única parcela via cartão de crédito. Apresentam baixo número de acessos e inatividade média considerável, com taxa de recorrência e renovação praticamente nula.</p>
+                        <div class="cluster-stats">
+                            <div class="cluster-stat">
+                                <span class="stat-value">83,83%</span>
+                                <span class="stat-label">Ativos</span>
+                            </div>
+                            <div class="cluster-stat">
+                                <span class="stat-value">~0%</span>
+                                <span class="stat-label">Recorrência</span>
+                            </div>
+                            <div class="cluster-stat">
+                                <span class="stat-value">~0%</span>
+                                <span class="stat-label">Renovação</span>
+                            </div>
+                            <div class="cluster-stat">
+                                <span class="stat-value">Baixo</span>
+                                <span class="stat-label">Engajamento</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cluster-card cluster-1">
+                        <div class="cluster-header">
+                            <span class="cluster-badge badge-danger">Cluster 1</span>
+                            <h3 class="cluster-name">Assinantes em Risco de Churn</h3>
+                        </div>
+                        <p class="cluster-desc">Clientes 100% recorrentes com pagamentos contínuos (frequentemente 12x), mas com acessos moderados e alta inatividade. Taxa de renovação de 0% e apenas 57,64% ativos — alto risco de abandono ao final do ciclo.</p>
+                        <div class="cluster-stats">
+                            <div class="cluster-stat">
+                                <span class="stat-value">57,64%</span>
+                                <span class="stat-label">Ativos</span>
+                            </div>
+                            <div class="cluster-stat">
+                                <span class="stat-value">100%</span>
+                                <span class="stat-label">Recorrência</span>
+                            </div>
+                            <div class="cluster-stat">
+                                <span class="stat-value">0%</span>
+                                <span class="stat-label">Renovação</span>
+                            </div>
+                            <div class="cluster-stat">
+                                <span class="stat-value">Alto</span>
+                                <span class="stat-label">Risco Churn</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cluster-card cluster-2">
+                        <div class="cluster-header">
+                            <span class="cluster-badge badge-success">Cluster 2</span>
+                            <h3 class="cluster-name">Clientes Leais e Engajados</h3>
+                        </div>
+                        <p class="cluster-desc">O grupo mais valioso. Alto engajamento com a plataforma (média de 36,36 acessos), taxa de renovação quase perfeita (99,85%) e 100% ativos. São clientes extremamente satisfeitos e leais, ideais para programas de indicação.</p>
+                        <div class="cluster-stats">
+                            <div class="cluster-stat">
+                                <span class="stat-value">100%</span>
+                                <span class="stat-label">Ativos</span>
+                            </div>
+                            <div class="cluster-stat">
+                                <span class="stat-value">35,89%</span>
+                                <span class="stat-label">Recorrência</span>
+                            </div>
+                            <div class="cluster-stat">
+                                <span class="stat-value">99,85%</span>
+                                <span class="stat-label">Renovação</span>
+                            </div>
+                            <div class="cluster-stat">
+                                <span class="stat-value">36,36</span>
+                                <span class="stat-label">Acessos (média)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-lightbulb"></i> Ações Estratégicas Recomendadas</h2>
+
+                <div class="strategy-grid">
+                    <div class="strategy-item">
+                        <h3><span class="strategy-cluster">Cluster 0</span> Fidelização</h3>
+                        <ul class="detail-list">
+                            <li><strong>Marketing:</strong> Campanhas de Upsell para migração a planos recorrentes ou assinaturas contínuas.</li>
+                            <li><strong>Vendas:</strong> Cupons de desconto progressivo para incentivar a segunda compra e criar hábito de consumo.</li>
+                            <li><strong>Retenção:</strong> Trilhas de "Boas-vindas" agressivas via e-mail/WhatsApp com conteúdos de valor para aumentar acessos.</li>
+                        </ul>
+                    </div>
+                    <div class="strategy-item">
+                        <h3><span class="strategy-cluster cluster-danger">Cluster 1</span> Recuperação Urgente</h3>
+                        <ul class="detail-list">
+                            <li><strong>Retenção (Urgente):</strong> Campanhas de Win-back com pesquisas de satisfação (NPS) para entender o desengajamento antes da expiração.</li>
+                            <li><strong>Marketing:</strong> Reengajamento baseado em conteúdo — notificações sobre novidades da plataforma para reativar o login.</li>
+                            <li><strong>Vendas:</strong> Ofertas de renovação antecipada com bônus ou descontos exclusivos para evitar abandono.</li>
+                        </ul>
+                    </div>
+                    <div class="strategy-item">
+                        <h3><span class="strategy-cluster cluster-success">Cluster 2</span> Expansão de Valor</h3>
+                        <ul class="detail-list">
+                            <li><strong>Marketing:</strong> Programas de Indicação (Member get Member) — os melhores defensores da marca.</li>
+                            <li><strong>Vendas:</strong> Cross-sell com produtos de ticket mais alto (Mentorias, Masterminds, eventos presenciais).</li>
+                            <li><strong>Retenção:</strong> Comunidade VIP e acesso antecipado a novos recursos para manter exclusividade e alto nível de atividade.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-robot"></i> Automação: Classificação de Novos Clientes</h2>
+                <p>Para garantir a <strong>escalabilidade</strong> da solução, foi desenvolvido um pipeline de pré-processamento que permite classificar automaticamente novos clientes nos clusters existentes, utilizando o modelo K-Means e o Scaler exportados via <code>joblib</code>.</p>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang"><i class="fab fa-python"></i> preprocessamento.py</span>
+                    </div>
+                    <pre><code>import joblib
+import pandas as pd
+import numpy as np
+
+def novos_clientes(base):
+    colunas_cluster = ['Tipo Pagamento', 'TOTAL_PARCELAS', 'RECORRENTE',
+                       'n_acessos', 'Dias sem Acessar', 'ativo_tratado',
+                       'RENOVACAO']
+    modelo_kmeans_treinado = joblib.load('modelo_kmeans_treinado.pkl')
+    scaler_treinado = joblib.load('scaler_clientes.pkl')
+    novos_clientes_df = pd.read_excel(base)
+    novos_clientes_df['ativo_tratado'] = np.where(
+        novos_clientes_df['ativo'] == 'sim', 1, 0
+    )
+    features_novos_clientes = novos_clientes_df[colunas_cluster]
+    novos_clientes_scaled = scaler_treinado.transform(features_novos_clientes)
+    novos_clientes_df['Cluster'] = modelo_kmeans_treinado.predict(
+        novos_clientes_scaled
+    )
+    novos_clientes_df.to_excel(base, index=False)
+    return novos_clientes_df</code></pre>
+                </div>
+                <p>Com esta função, basta importar <code>novos_clientes()</code>, passar o caminho de um arquivo Excel com a base de novos clientes e o modelo atribui automaticamente cada um ao cluster mais adequado.</p>
             </div>
 
             <div class="detail-block glass-card">
@@ -97,9 +299,11 @@
                 <div class="tech-tags">
                     <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
                     <span class="tech-tag"><i class="fas fa-table"></i> Pandas</span>
+                    <span class="tech-tag"><i class="fas fa-calculator"></i> NumPy</span>
                     <span class="tech-tag"><i class="fas fa-gears"></i> Scikit-learn</span>
                     <span class="tech-tag"><i class="fas fa-chart-line"></i> Matplotlib</span>
-                    <span class="tech-tag"><i class="fas fa-calculator"></i> NumPy</span>
+                    <span class="tech-tag"><i class="fas fa-save"></i> Joblib</span>
+                    <span class="tech-tag"><i class="fas fa-file-excel"></i> Excel / Openpyxl</span>
                 </div>
             </div>
 
