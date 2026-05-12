@@ -463,10 +463,31 @@ body {
     gap: 2rem;
 }
 
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .project-card {
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: default;
+    cursor: pointer;
+}
+
+.project-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: var(--black-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-placeholder i {
+    font-size: 4rem;
+    color: var(--red);
+    opacity: 0.5;
 }
 
 .project-card:hover {

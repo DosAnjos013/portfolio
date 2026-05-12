@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./icone-site.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="projeto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <title>Análise de Streaming | João Pedro dos Anjos</title>
+</head>
+<body>
+
+    <canvas id="particleCanvas"></canvas>
+
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">&lt;JP/&gt;</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Início</a></li>
+                <li><a href="index.html#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="index.html#projetos" class="nav-link">Projetos</a></li>
+                <li><a href="index.html#contato" class="nav-link">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="index.html#projetos" class="btn-back"><i class="fas fa-arrow-left"></i> Voltar aos Projetos</a>
+            <div class="project-hero-content">
+                <div class="project-hero-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Pandas</span>
+                    <span class="project-tag">ETL</span>
+                </div>
+                <h1 class="project-hero-title">Análise de Comportamento e Engajamento</h1>
+                <p class="project-hero-subtitle">Integração e tratamento de múltiplas bases de dados (ETL) com Python e Pandas para identificar padrões de consumo em uma plataforma de streaming.</p>
+            </div>
+            <div class="project-hero-image">
+                <img src="./img/streaming.png" alt="Análise de Streaming">
+            </div>
+        </div>
+    </section>
+
+    <section class="project-detail section">
+        <div class="container">
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-bullseye"></i> Objetivo</h2>
+                <p>Este projeto tem como objetivo praticar e demonstrar habilidades em análise de dados usando <strong>Python</strong> e a biblioteca <strong>Pandas</strong>. Os dados simulam o histórico de visualizações de uma plataforma de streaming de conteúdo (filmes e séries), e foram gerados com o auxílio de um modelo de linguagem (IA).</p>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-database"></i> Bases de Dados</h2>
+                <p>O projeto utiliza quatro arquivos CSV relacionados:</p>
+                <ul class="detail-list">
+                    <li><strong>catalogo_conteudo.csv:</strong> Informações sobre filmes e séries disponíveis na plataforma.</li>
+                    <li><strong>assinantes.csv:</strong> Dados dos assinantes da plataforma.</li>
+                    <li><strong>plataformas_distribuicao.csv:</strong> Detalhes sobre as plataformas e dispositivos usados para acessar o conteúdo.</li>
+                    <li><strong>historico_visualizacoes_2024.csv:</strong> Registros de visualizações de conteúdo pelos assinantes em 2024.</li>
+                </ul>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-code"></i> Metodologia</h2>
+                <div class="methodology-grid">
+                    <div class="method-item">
+                        <h3>1. Junção de Tabelas (Joins)</h3>
+                        <p>Combinação das quatro bases de dados para responder perguntas como: qual o gênero mais assistido por assinantes Premium no Brasil, qual a plataforma mais utilizada para ficção científica e qual o título com maior tempo de visualização.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>2. Filtros e Seleções</h3>
+                        <p>Aplicação de filtros avançados para listar assinantes cadastrados em períodos específicos, encontrar filmes com avaliação IMDb acima de 8.5 e identificar visualizações incompletas.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>3. Agrupamento e Agregação</h3>
+                        <p>Cálculo do tempo médio de visualização por dispositivo, contagem de assinantes por país e total de gastos mensais por tipo de plano.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>4. Engenharia de Features</h3>
+                        <p>Criação de novas colunas como idade do assinante e percentual de cada filme/série assistido (Minutos Assistidos / Duração Total).</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>5. Tratamento de Dados Nulos</h3>
+                        <p>Substituição de valores nulos na coluna de avaliação por média calculada, garantindo integridade dos dados para análise.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>6. Visualização de Dados</h3>
+                        <p>Criação de gráficos para distribuição de assinantes por plano e comparação do tempo médio de visualização entre gêneros.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-chart-line"></i> Principais Resultados</h2>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-highlight">Ficção Científica</span>
+                        <span class="result-label">Gênero mais assistido por assinantes Premium no Brasil</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-highlight">Apple TV</span>
+                        <span class="result-label">Plataforma mais utilizada para ficção científica</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-highlight">8.75 horas</span>
+                        <span class="result-label">Tempo de visualização do título mais assistido: "O Legado do Código"</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-wrench"></i> Tecnologias Utilizadas</h2>
+                <div class="tech-tags">
+                    <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+                    <span class="tech-tag"><i class="fas fa-table"></i> Pandas</span>
+                    <span class="tech-tag"><i class="fas fa-chart-line"></i> Matplotlib</span>
+                    <span class="tech-tag"><i class="fas fa-database"></i> CSV / ETL</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-social">
+                    <a href="https://github.com/DosAnjos013" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-dos-anjos-martins-842b7a15b" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://discord.com/users/DosAnjosM" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                </div>
+                <p class="footer-text">&copy; 2025 João Pedro dos Anjos Martins. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var canvas = document.getElementById('particleCanvas');
+        var ctx = canvas.getContext('2d');
+        var particles = [];
+        var mouse = { x: null, y: null, radius: 150 };
+        function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        resizeCanvas(); window.addEventListener('resize', resizeCanvas);
+        function createParticle() { return { x: Math.random()*canvas.width, y: Math.random()*canvas.height, size: Math.random()*2+0.5, speedX: (Math.random()-0.5)*0.8, speedY: (Math.random()-0.5)*0.8, isRed: Math.random()<0.15, opacity: Math.random()*0.5+0.2 }; }
+        function updateParticle(p) { p.x+=p.speedX; p.y+=p.speedY; if(p.x>canvas.width)p.x=0; if(p.x<0)p.x=canvas.width; if(p.y>canvas.height)p.y=0; if(p.y<0)p.y=canvas.height; if(mouse.x!==null){var dx=mouse.x-p.x,dy=mouse.y-p.y,dist=Math.sqrt(dx*dx+dy*dy); if(dist<mouse.radius){var f=(mouse.radius-dist)/mouse.radius; p.x-=dx*f*0.02; p.y-=dy*f*0.02;}} }
+        function drawParticle(p) { ctx.beginPath(); ctx.arc(p.x,p.y,p.size,0,Math.PI*2); ctx.fillStyle=p.isRed?'rgba(230,0,0,'+p.opacity+')':'rgba(255,255,255,'+p.opacity+')'; ctx.fill(); }
+        function initParticles() { particles=[]; var c=Math.min(Math.floor((canvas.width*canvas.height)/8000),150); for(var i=0;i<c;i++) particles.push(createParticle()); }
+        initParticles(); window.addEventListener('resize', initParticles);
+        function connectParticles() { for(var a=0;a<particles.length;a++) for(var b=a+1;b<particles.length;b++){var dx=particles[a].x-particles[b].x,dy=particles[a].y-particles[b].y,d=Math.sqrt(dx*dx+dy*dy); if(d<120){var o=(1-d/120)*0.15; ctx.strokeStyle=(particles[a].isRed||particles[b].isRed)?'rgba(230,0,0,'+o+')':'rgba(255,255,255,'+o+')'; ctx.lineWidth=0.5; ctx.beginPath(); ctx.moveTo(particles[a].x,particles[a].y); ctx.lineTo(particles[b].x,particles[b].y); ctx.stroke();}} }
+        function animate() { ctx.clearRect(0,0,canvas.width,canvas.height); for(var i=0;i<particles.length;i++){updateParticle(particles[i]);drawParticle(particles[i]);} connectParticles(); requestAnimationFrame(animate); }
+        animate();
+        window.addEventListener('mousemove',function(e){mouse.x=e.x;mouse.y=e.y;});
+        window.addEventListener('mouseleave',function(){mouse.x=null;mouse.y=null;});
+
+        var obsOpts={threshold:0.1,rootMargin:'0px 0px -50px 0px'};
+        var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting)entry.target.classList.add('revealed');});},obsOpts);
+        document.querySelectorAll('.glass-card,.detail-title').forEach(function(el){el.classList.add('reveal');observer.observe(el);});
+    </script>
+</body>
+</html>
