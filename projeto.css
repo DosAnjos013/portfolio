@@ -1,0 +1,346 @@
+/* ========== PROJECT PAGE STYLES ========== */
+
+/* Back Button */
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gray-400);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    transition: color 0.3s ease;
+}
+
+.btn-back:hover {
+    color: var(--red);
+}
+
+/* Project Hero */
+.project-hero {
+    padding: 8rem 0 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.project-hero-content {
+    margin-bottom: 2rem;
+}
+
+.project-hero-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.project-hero-tags .project-tag {
+    background: rgba(230, 0, 0, 0.15);
+    color: var(--red);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.project-hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.project-hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--gray-400);
+    line-height: 1.8;
+    max-width: 700px;
+}
+
+.project-hero-image {
+    margin-top: 2rem;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+}
+
+.project-hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Detail Sections */
+.project-detail {
+    padding-top: 2rem;
+}
+
+.detail-block {
+    padding: 2rem 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.detail-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.detail-title i {
+    color: var(--red);
+    font-size: 1.2rem;
+}
+
+.detail-block p {
+    font-size: 1rem;
+    color: var(--gray-300);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.detail-block p:last-child {
+    margin-bottom: 0;
+}
+
+.detail-block strong {
+    color: var(--white);
+}
+
+/* Lists */
+.detail-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.detail-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--gray-300);
+    line-height: 1.7;
+}
+
+.detail-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65rem;
+    width: 6px;
+    height: 6px;
+    background: var(--red);
+    border-radius: 50%;
+}
+
+/* Methodology Grid */
+.methodology-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.method-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: border-color 0.3s ease;
+}
+
+.method-item:hover {
+    border-color: rgba(230, 0, 0, 0.3);
+}
+
+.method-item h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--red);
+    margin-bottom: 0.6rem;
+}
+
+.method-item p {
+    font-size: 0.92rem;
+    margin-bottom: 0;
+}
+
+/* Results Grid */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.result-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.result-highlight {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--red);
+}
+
+.result-label {
+    font-size: 0.85rem;
+    color: var(--gray-400);
+    line-height: 1.5;
+}
+
+/* Tech Tags */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.tech-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--gray-300);
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+    border-color: var(--red);
+    color: var(--white);
+}
+
+.tech-tag i {
+    color: var(--red);
+}
+
+/* Questions Section */
+.questions-list {
+    list-style: none;
+    padding: 0;
+    counter-reset: question;
+}
+
+.questions-list li {
+    counter-increment: question;
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 1.2rem;
+    color: var(--gray-300);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.questions-list li::before {
+    content: counter(question);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: rgba(230, 0, 0, 0.15);
+    color: var(--red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* Data Dictionary */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.data-table th,
+.data-table td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--glass-border);
+    font-size: 0.9rem;
+}
+
+.data-table th {
+    color: var(--red);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.data-table td {
+    color: var(--gray-300);
+}
+
+.data-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Narrative Block */
+.narrative-text {
+    font-style: italic;
+    border-left: 3px solid var(--red);
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+    color: var(--gray-400);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .project-hero-title {
+        font-size: 1.8rem;
+    }
+
+    .methodology-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-block {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-hero-title {
+        font-size: 1.5rem;
+    }
+
+    .project-hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .detail-block {
+        padding: 1.2rem;
+    }
+
+    .tech-tags {
+        gap: 0.5rem;
+    }
+}

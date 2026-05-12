@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./icone-site.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="projeto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <title>Previsão de Churn Bancário | João Pedro dos Anjos</title>
+</head>
+<body>
+
+    <canvas id="particleCanvas"></canvas>
+
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">&lt;JP/&gt;</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Início</a></li>
+                <li><a href="index.html#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="index.html#projetos" class="nav-link">Projetos</a></li>
+                <li><a href="index.html#contato" class="nav-link">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="index.html#projetos" class="btn-back"><i class="fas fa-arrow-left"></i> Voltar aos Projetos</a>
+            <div class="project-hero-content">
+                <div class="project-hero-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Pandas</span>
+                    <span class="project-tag">SciPy</span>
+                </div>
+                <h1 class="project-hero-title">Previsão de Churn Bancário: Retenção de Clientes em um Cenário Competitivo</h1>
+                <p class="project-hero-subtitle">Análise exploratória e modelo preditivo para identificar clientes com risco de cancelamento em um banco de médio porte, propondo ações estratégicas de retenção baseadas em dados.</p>
+            </div>
+            <div class="project-hero-image">
+                <img src="img/bank_churn_portfolio.png" alt="Bank Customer Churn">
+            </div>
+        </div>
+    </section>
+
+    <section class="project-detail section">
+        <div class="container">
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-building"></i> Contexto</h2>
+                <p>O <strong>Banco Interativo</strong>, uma instituição financeira de médio porte com mais de 250 mil correntistas, enfrentava um cenário preocupante: mais de <strong>6.300 clientes</strong> haviam encerrado suas contas no último trimestre — um aumento de <strong>27%</strong> em relação ao mesmo período do ano anterior.</p>
+                <p>A intensificação da concorrência com bancos digitais (Nubank, C6 Bank, Inter) e a transformação do perfil do consumidor bancário exigiam uma resposta baseada em dados para reverter a tendência de evasão.</p>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-crosshairs"></i> O Desafio</h2>
+                <ol class="questions-list">
+                    <li>Quais são os fatores que melhor explicam o churn?</li>
+                    <li>Quem são os clientes com maior probabilidade de sair?</li>
+                    <li>Que ações estratégicas podem ser sugeridas com base nos dados analisados?</li>
+                    <li>Clientes com crédito alto estão saindo? Existe relação com reclamações?</li>
+                </ol>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-database"></i> Dados Analisados</h2>
+                <p>Base robusta com atributos demográficos, comportamentais e transacionais:</p>
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Variável</th><th>Tipo</th><th>Descrição</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>CreditScore</td><td>int</td><td>Pontuação de crédito do cliente</td></tr>
+                        <tr><td>Geography</td><td>categórico</td><td>País de residência</td></tr>
+                        <tr><td>Age</td><td>int</td><td>Idade do cliente</td></tr>
+                        <tr><td>Tenure</td><td>int</td><td>Anos como cliente do banco</td></tr>
+                        <tr><td>Balance</td><td>float</td><td>Saldo médio da conta</td></tr>
+                        <tr><td>NumOfProducts</td><td>int</td><td>Número de produtos contratados</td></tr>
+                        <tr><td>IsActiveMember</td><td>int</td><td>Acessou a conta nos últimos 30 dias</td></tr>
+                        <tr><td>Complain</td><td>int</td><td>Reclamou nos últimos 2 anos</td></tr>
+                        <tr><td>Satisfaction Score</td><td>int</td><td>Nível de satisfação (1 a 5)</td></tr>
+                        <tr><td>Exited</td><td>int</td><td>Cancelou conta (variável alvo)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-code"></i> Metodologia</h2>
+                <div class="methodology-grid">
+                    <div class="method-item">
+                        <h3>Análise Exploratória</h3>
+                        <p>Investigação das distribuições, correlações e padrões de comportamento entre clientes que cancelaram vs. os que permaneceram.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>Análise de Perfil</h3>
+                        <p>Identificação de perfis demográficos (idade, sexo, localização) e hábitos financeiros associados ao churn.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>Clusterização</h3>
+                        <p>Segmentação de clientes por comportamento e risco, utilizando técnicas de Machine Learning não supervisionado.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>Recomendações Estratégicas</h3>
+                        <p>Proposição de ações segmentadas para retenção, baseadas em evidências dos dados analisados.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-chart-line"></i> Descobertas Principais</h2>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-highlight">+27%</span>
+                        <span class="result-label">Aumento de cancelamentos no último trimestre</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-highlight">30%</span>
+                        <span class="result-label">Dos cancelamentos tinham reclamação formal não resolvida</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-highlight">40%</span>
+                        <span class="result-label">Cancelamentos de clientes de alto poder aquisitivo</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-wrench"></i> Tecnologias Utilizadas</h2>
+                <div class="tech-tags">
+                    <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+                    <span class="tech-tag"><i class="fas fa-table"></i> Pandas</span>
+                    <span class="tech-tag"><i class="fas fa-flask"></i> SciPy</span>
+                    <span class="tech-tag"><i class="fas fa-gears"></i> Scikit-learn</span>
+                    <span class="tech-tag"><i class="fas fa-chart-line"></i> Matplotlib</span>
+                    <span class="tech-tag"><i class="fas fa-file-excel"></i> Excel</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-social">
+                    <a href="https://github.com/DosAnjos013" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-dos-anjos-martins-842b7a15b" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://discord.com/users/DosAnjosM" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                </div>
+                <p class="footer-text">&copy; 2025 João Pedro dos Anjos Martins. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var canvas=document.getElementById('particleCanvas');var ctx=canvas.getContext('2d');var particles=[];var mouse={x:null,y:null,radius:150};
+        function resizeCanvas(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}resizeCanvas();window.addEventListener('resize',resizeCanvas);
+        function createParticle(){return{x:Math.random()*canvas.width,y:Math.random()*canvas.height,size:Math.random()*2+0.5,speedX:(Math.random()-0.5)*0.8,speedY:(Math.random()-0.5)*0.8,isRed:Math.random()<0.15,opacity:Math.random()*0.5+0.2};}
+        function updateParticle(p){p.x+=p.speedX;p.y+=p.speedY;if(p.x>canvas.width)p.x=0;if(p.x<0)p.x=canvas.width;if(p.y>canvas.height)p.y=0;if(p.y<0)p.y=canvas.height;if(mouse.x!==null){var dx=mouse.x-p.x,dy=mouse.y-p.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<mouse.radius){var f=(mouse.radius-dist)/mouse.radius;p.x-=dx*f*0.02;p.y-=dy*f*0.02;}}}
+        function drawParticle(p){ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fillStyle=p.isRed?'rgba(230,0,0,'+p.opacity+')':'rgba(255,255,255,'+p.opacity+')';ctx.fill();}
+        function initParticles(){particles=[];var c=Math.min(Math.floor((canvas.width*canvas.height)/8000),150);for(var i=0;i<c;i++)particles.push(createParticle());}initParticles();window.addEventListener('resize',initParticles);
+        function connectParticles(){for(var a=0;a<particles.length;a++)for(var b=a+1;b<particles.length;b++){var dx=particles[a].x-particles[b].x,dy=particles[a].y-particles[b].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){var o=(1-d/120)*0.15;ctx.strokeStyle=(particles[a].isRed||particles[b].isRed)?'rgba(230,0,0,'+o+')':'rgba(255,255,255,'+o+')';ctx.lineWidth=0.5;ctx.beginPath();ctx.moveTo(particles[a].x,particles[a].y);ctx.lineTo(particles[b].x,particles[b].y);ctx.stroke();}}}
+        function animate(){ctx.clearRect(0,0,canvas.width,canvas.height);for(var i=0;i<particles.length;i++){updateParticle(particles[i]);drawParticle(particles[i]);}connectParticles();requestAnimationFrame(animate);}animate();
+        window.addEventListener('mousemove',function(e){mouse.x=e.x;mouse.y=e.y;});window.addEventListener('mouseleave',function(){mouse.x=null;mouse.y=null;});
+        var obsOpts={threshold:0.1,rootMargin:'0px 0px -50px 0px'};var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting)entry.target.classList.add('revealed');});},obsOpts);
+        document.querySelectorAll('.glass-card,.detail-title').forEach(function(el){el.classList.add('reveal');observer.observe(el);});
+    </script>
+</body>
+</html>

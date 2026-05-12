@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./icone-site.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="projeto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <title>Teste A/B - iFood | João Pedro dos Anjos</title>
+</head>
+<body>
+
+    <canvas id="particleCanvas"></canvas>
+
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">&lt;JP/&gt;</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Início</a></li>
+                <li><a href="index.html#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="index.html#projetos" class="nav-link">Projetos</a></li>
+                <li><a href="index.html#contato" class="nav-link">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="index.html#projetos" class="btn-back"><i class="fas fa-arrow-left"></i> Voltar aos Projetos</a>
+            <div class="project-hero-content">
+                <div class="project-hero-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Pandas</span>
+                    <span class="project-tag">SciPy</span>
+                </div>
+                <h1 class="project-hero-title">Teste A/B e Análise de Campanhas Promocionais</h1>
+                <p class="project-hero-subtitle">Análise inferencial e experimental de cinco campanhas de marketing em cenário de varejo premium, utilizando testes de hipótese e segmentação inteligente para otimizar o ROI.</p>
+            </div>
+            <div class="project-hero-image">
+                <img src="img/ifood_ab_test_portfolio.png" alt="Teste A/B iFood">
+            </div>
+        </div>
+    </section>
+
+    <section class="project-detail section">
+        <div class="container">
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-building"></i> Contexto</h2>
+                <p>Uma rede varejista do setor <strong>premium</strong>, com portfólio de produtos alimentícios de alta qualidade, bebidas importadas, vinhos, queijos e itens gourmet, enfrentava o desafio de compreender a efetividade de suas <strong>cinco campanhas promocionais</strong> realizadas ao longo de dois anos.</p>
+                <p>O caso foi inspirado no processo seletivo do <strong>iFood</strong> para a área de dados, adaptado pela FNAT para fins acadêmicos.</p>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-bullhorn"></i> As 5 Campanhas</h2>
+                <div class="methodology-grid">
+                    <div class="method-item">
+                        <h3>Campanha 1 - Família Premium</h3>
+                        <p>Focada em clientes com perfil familiar e produtos de ticket médio elevado, como itens gourmet e vinhos selecionados.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>Campanha 2 - Sorteio de Alto Valor</h3>
+                        <p>Baseada em sorteio, sem descontos diretos. Gasto mínimo elevado para participação. Resultou em baixas taxas de conversão.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>Campanha 3 - Descontos Essenciais</h3>
+                        <p>Descontos expressivos em produtos de uso cotidiano para ampliar volume de compras e estimular frequência. Parte do Teste A/B.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>Campanha 4 - Premium Moderado</h3>
+                        <p>Descontos competitivos em produtos de maior valor agregado, menos agressivos que a Campanha 3. Contraparte do Teste A/B.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>Campanha 5 - Experiência Gourmet</h3>
+                        <p>Campanha premium alinhada a produtos familiares de alto ticket (vinhos, queijos). Resultados superiores à Campanha 2.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>Teste A/B (3 vs 4)</h3>
+                        <p>Desenho intencional para medir qual abordagem (descontos agressivos vs. moderados) traz maior conversão e engajamento.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-crosshairs"></i> O Desafio</h2>
+                <ol class="questions-list">
+                    <li>Qual o tamanho de amostra necessário para um teste estatisticamente válido de novas campanhas?</li>
+                    <li>Quais foram os resultados do teste A/B entre as campanhas 3 e 4?</li>
+                    <li>Qual campanha apresentou a melhor performance e por quê?</li>
+                </ol>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-database"></i> Dados Analisados</h2>
+                <p>Base com informações demográficas, comportamentais e histórico de resposta a campanhas:</p>
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Variável</th><th>Descrição</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Income</td><td>Renda anual do domicílio</td></tr>
+                        <tr><td>MntWines / MntFruits / MntMeatProducts</td><td>Gastos por categoria nos últimos 2 anos</td></tr>
+                        <tr><td>NumDealsPurchases</td><td>Compras feitas com desconto</td></tr>
+                        <tr><td>NumCatalogPurchases / NumStorePurchases / NumWebPurchases</td><td>Compras por canal</td></tr>
+                        <tr><td>AcceptedCmp1 a AcceptedCmp5</td><td>Aceitação de cada campanha (0/1)</td></tr>
+                        <tr><td>Response</td><td>Aceitou a última campanha (variável alvo)</td></tr>
+                        <tr><td>Grupo</td><td>Campanha de teste A ou B</td></tr>
+                        <tr><td>MntTotal</td><td>Soma total de gastos em todas as categorias</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-code"></i> Metodologia</h2>
+                <div class="methodology-grid">
+                    <div class="method-item">
+                        <h3>Análise Exploratória</h3>
+                        <p>Investigação do perfil de clientes, padrões de consumo e distribuição de resposta a campanhas.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>Teste A/B</h3>
+                        <p>Comparação estatística entre campanhas 3 (descontos agressivos) e 4 (descontos moderados) com teste de hipótese.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>Cálculo de Amostra</h3>
+                        <p>Determinação do tamanho mínimo de amostra para validar futuras campanhas com significância estatística.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>Segmentação</h3>
+                        <p>Identificação de perfis de clientes com maior probabilidade de aceitar campanhas, baseada em dados demográficos e comportamentais.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-wrench"></i> Tecnologias Utilizadas</h2>
+                <div class="tech-tags">
+                    <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+                    <span class="tech-tag"><i class="fas fa-table"></i> Pandas</span>
+                    <span class="tech-tag"><i class="fas fa-flask"></i> SciPy</span>
+                    <span class="tech-tag"><i class="fas fa-chart-line"></i> Matplotlib</span>
+                    <span class="tech-tag"><i class="fas fa-file-excel"></i> Excel</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-social">
+                    <a href="https://github.com/DosAnjos013" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-dos-anjos-martins-842b7a15b" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://discord.com/users/DosAnjosM" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                </div>
+                <p class="footer-text">&copy; 2025 João Pedro dos Anjos Martins. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var canvas=document.getElementById('particleCanvas');var ctx=canvas.getContext('2d');var particles=[];var mouse={x:null,y:null,radius:150};
+        function resizeCanvas(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}resizeCanvas();window.addEventListener('resize',resizeCanvas);
+        function createParticle(){return{x:Math.random()*canvas.width,y:Math.random()*canvas.height,size:Math.random()*2+0.5,speedX:(Math.random()-0.5)*0.8,speedY:(Math.random()-0.5)*0.8,isRed:Math.random()<0.15,opacity:Math.random()*0.5+0.2};}
+        function updateParticle(p){p.x+=p.speedX;p.y+=p.speedY;if(p.x>canvas.width)p.x=0;if(p.x<0)p.x=canvas.width;if(p.y>canvas.height)p.y=0;if(p.y<0)p.y=canvas.height;if(mouse.x!==null){var dx=mouse.x-p.x,dy=mouse.y-p.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<mouse.radius){var f=(mouse.radius-dist)/mouse.radius;p.x-=dx*f*0.02;p.y-=dy*f*0.02;}}}
+        function drawParticle(p){ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fillStyle=p.isRed?'rgba(230,0,0,'+p.opacity+')':'rgba(255,255,255,'+p.opacity+')';ctx.fill();}
+        function initParticles(){particles=[];var c=Math.min(Math.floor((canvas.width*canvas.height)/8000),150);for(var i=0;i<c;i++)particles.push(createParticle());}initParticles();window.addEventListener('resize',initParticles);
+        function connectParticles(){for(var a=0;a<particles.length;a++)for(var b=a+1;b<particles.length;b++){var dx=particles[a].x-particles[b].x,dy=particles[a].y-particles[b].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){var o=(1-d/120)*0.15;ctx.strokeStyle=(particles[a].isRed||particles[b].isRed)?'rgba(230,0,0,'+o+')':'rgba(255,255,255,'+o+')';ctx.lineWidth=0.5;ctx.beginPath();ctx.moveTo(particles[a].x,particles[a].y);ctx.lineTo(particles[b].x,particles[b].y);ctx.stroke();}}}
+        function animate(){ctx.clearRect(0,0,canvas.width,canvas.height);for(var i=0;i<particles.length;i++){updateParticle(particles[i]);drawParticle(particles[i]);}connectParticles();requestAnimationFrame(animate);}animate();
+        window.addEventListener('mousemove',function(e){mouse.x=e.x;mouse.y=e.y;});window.addEventListener('mouseleave',function(){mouse.x=null;mouse.y=null;});
+        var obsOpts={threshold:0.1,rootMargin:'0px 0px -50px 0px'};var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting)entry.target.classList.add('revealed');});},obsOpts);
+        document.querySelectorAll('.glass-card,.detail-title').forEach(function(el){el.classList.add('reveal');observer.observe(el);});
+    </script>
+</body>
+</html>

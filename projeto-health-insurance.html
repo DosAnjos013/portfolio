@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./icone-site.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="projeto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <title>Health Insurance | João Pedro dos Anjos</title>
+</head>
+<body>
+
+    <canvas id="particleCanvas"></canvas>
+
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">&lt;JP/&gt;</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Início</a></li>
+                <li><a href="index.html#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="index.html#projetos" class="nav-link">Projetos</a></li>
+                <li><a href="index.html#contato" class="nav-link">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="index.html#projetos" class="btn-back"><i class="fas fa-arrow-left"></i> Voltar aos Projetos</a>
+            <div class="project-hero-content">
+                <div class="project-hero-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Clusterização</span>
+                    <span class="project-tag">Pandas</span>
+                </div>
+                <h1 class="project-hero-title">Health Insurance: Impacto de Perfis de Clientes nos Custos com Saúde</h1>
+                <p class="project-hero-subtitle">Análise de clusterização para identificar perfis de clientes e otimizar políticas de precificação em uma operadora de planos de saúde, utilizando dados demográficos e comportamentais.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-detail section">
+        <div class="container">
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-building"></i> Contexto</h2>
+                <p>A <strong>HealthSecure</strong>, operadora nacional de planos de saúde com atuação há mais de duas décadas, enfrentava um cenário desafiador: a sinistralidade estava em trajetória ascendente, comprometendo os resultados financeiros. Era necessário entender, com profundidade, o comportamento dos beneficiários e os fatores que mais impactavam os gastos com saúde.</p>
+                <p>O setor de saúde suplementar brasileiro enfrenta o envelhecimento da população, avanço tecnológico médico (que encarece procedimentos) e a entrada de operadoras digitais com estruturas mais enxutas, intensificando a concorrência.</p>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-crosshairs"></i> O Desafio</h2>
+                <ol class="questions-list">
+                    <li>É possível identificar perfis de clientes de menor risco e menor custo para apoiar estratégias de marketing?</li>
+                    <li>Clientes com desconto realmente apresentam menor risco?</li>
+                    <li>Como precificar o valor do prêmio para minimizar risco e aumentar a lucratividade?</li>
+                </ol>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-database"></i> Dados Analisados</h2>
+                <p>Base histórica com atributos demográficos e indicadores financeiros dos beneficiários:</p>
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Variável</th><th>Tipo</th><th>Descrição</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>age</td><td>Numérico</td><td>Idade do cliente</td></tr>
+                        <tr><td>gender</td><td>Categórico</td><td>Gênero do cliente</td></tr>
+                        <tr><td>bmi</td><td>Numérico</td><td>Índice de Massa Corporal (IMC)</td></tr>
+                        <tr><td>children</td><td>Numérico</td><td>Número de filhos do cliente</td></tr>
+                        <tr><td>discount_eligibility</td><td>Categórico</td><td>Elegível a desconto no plano</td></tr>
+                        <tr><td>region</td><td>Categórico</td><td>Região geográfica de residência</td></tr>
+                        <tr><td>expenses</td><td>Numérico</td><td>Gastos médicos realizados (R$)</td></tr>
+                        <tr><td>premium</td><td>Numérico</td><td>Valor do plano cobrado (R$)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-code"></i> Metodologia</h2>
+                <div class="methodology-grid">
+                    <div class="method-item">
+                        <h3>Análise Exploratória</h3>
+                        <p>Investigação das distribuições de idade, IMC, gastos e prêmios para entender o perfil da base de beneficiários.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>Correlação de Variáveis</h3>
+                        <p>Cruzamento de variáveis demográficas e clínicas com custos médicos para identificar fatores de risco.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>Clusterização</h3>
+                        <p>Segmentação de clientes em clusters homogêneos para identificar perfis de menor e maior risco.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>Precificação Analítica</h3>
+                        <p>Proposição de modelo de precificação baseado em dados, considerando perfil de risco individual.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-lightbulb"></i> Insights Esperados</h2>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-highlight">Perfis</span>
+                        <span class="result-label">Identificação de clusters de clientes por nível de risco e custo</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-highlight">Precificação</span>
+                        <span class="result-label">Modelo justo baseado em dados demográficos e comportamentais</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-highlight">Descontos</span>
+                        <span class="result-label">Avaliação da efetividade das políticas de desconto atuais</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-wrench"></i> Tecnologias Utilizadas</h2>
+                <div class="tech-tags">
+                    <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+                    <span class="tech-tag"><i class="fas fa-table"></i> Pandas</span>
+                    <span class="tech-tag"><i class="fas fa-gears"></i> Scikit-learn</span>
+                    <span class="tech-tag"><i class="fas fa-chart-line"></i> Matplotlib</span>
+                    <span class="tech-tag"><i class="fas fa-file-excel"></i> Excel</span>
+                    <span class="tech-tag"><i class="fas fa-chart-bar"></i> Power BI</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-social">
+                    <a href="https://github.com/DosAnjos013" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-dos-anjos-martins-842b7a15b" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://discord.com/users/DosAnjosM" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                </div>
+                <p class="footer-text">&copy; 2025 João Pedro dos Anjos Martins. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var canvas=document.getElementById('particleCanvas');var ctx=canvas.getContext('2d');var particles=[];var mouse={x:null,y:null,radius:150};
+        function resizeCanvas(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}resizeCanvas();window.addEventListener('resize',resizeCanvas);
+        function createParticle(){return{x:Math.random()*canvas.width,y:Math.random()*canvas.height,size:Math.random()*2+0.5,speedX:(Math.random()-0.5)*0.8,speedY:(Math.random()-0.5)*0.8,isRed:Math.random()<0.15,opacity:Math.random()*0.5+0.2};}
+        function updateParticle(p){p.x+=p.speedX;p.y+=p.speedY;if(p.x>canvas.width)p.x=0;if(p.x<0)p.x=canvas.width;if(p.y>canvas.height)p.y=0;if(p.y<0)p.y=canvas.height;if(mouse.x!==null){var dx=mouse.x-p.x,dy=mouse.y-p.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<mouse.radius){var f=(mouse.radius-dist)/mouse.radius;p.x-=dx*f*0.02;p.y-=dy*f*0.02;}}}
+        function drawParticle(p){ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fillStyle=p.isRed?'rgba(230,0,0,'+p.opacity+')':'rgba(255,255,255,'+p.opacity+')';ctx.fill();}
+        function initParticles(){particles=[];var c=Math.min(Math.floor((canvas.width*canvas.height)/8000),150);for(var i=0;i<c;i++)particles.push(createParticle());}initParticles();window.addEventListener('resize',initParticles);
+        function connectParticles(){for(var a=0;a<particles.length;a++)for(var b=a+1;b<particles.length;b++){var dx=particles[a].x-particles[b].x,dy=particles[a].y-particles[b].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){var o=(1-d/120)*0.15;ctx.strokeStyle=(particles[a].isRed||particles[b].isRed)?'rgba(230,0,0,'+o+')':'rgba(255,255,255,'+o+')';ctx.lineWidth=0.5;ctx.beginPath();ctx.moveTo(particles[a].x,particles[a].y);ctx.lineTo(particles[b].x,particles[b].y);ctx.stroke();}}}
+        function animate(){ctx.clearRect(0,0,canvas.width,canvas.height);for(var i=0;i<particles.length;i++){updateParticle(particles[i]);drawParticle(particles[i]);}connectParticles();requestAnimationFrame(animate);}animate();
+        window.addEventListener('mousemove',function(e){mouse.x=e.x;mouse.y=e.y;});window.addEventListener('mouseleave',function(){mouse.x=null;mouse.y=null;});
+        var obsOpts={threshold:0.1,rootMargin:'0px 0px -50px 0px'};var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting)entry.target.classList.add('revealed');});},obsOpts);
+        document.querySelectorAll('.glass-card,.detail-title').forEach(function(el){el.classList.add('reveal');observer.observe(el);});
+    </script>
+</body>
+</html>

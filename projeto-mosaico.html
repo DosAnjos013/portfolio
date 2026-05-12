@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./icone-site.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="projeto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <title>Dashboard com Matplotlib | João Pedro dos Anjos</title>
+</head>
+<body>
+
+    <canvas id="particleCanvas"></canvas>
+
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">&lt;JP/&gt;</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Início</a></li>
+                <li><a href="index.html#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="index.html#projetos" class="nav-link">Projetos</a></li>
+                <li><a href="index.html#contato" class="nav-link">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="index.html#projetos" class="btn-back"><i class="fas fa-arrow-left"></i> Voltar aos Projetos</a>
+            <div class="project-hero-content">
+                <div class="project-hero-tags">
+                    <span class="project-tag">Matplotlib</span>
+                    <span class="project-tag">KPIs</span>
+                    <span class="project-tag">Data Viz</span>
+                </div>
+                <h1 class="project-hero-title">Dashboard Estratégico com Matplotlib</h1>
+                <p class="project-hero-subtitle">Desenvolvimento de um mosaico visual para monitoramento de KPIs comerciais, integrando gráficos de linha, barras e pizza para comparar vendas físicas vs. digitais.</p>
+            </div>
+            <div class="project-hero-image">
+                <img src="./img/mosaico.png" alt="Dashboard Matplotlib">
+            </div>
+        </div>
+    </section>
+
+    <section class="project-detail section">
+        <div class="container">
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-bullseye"></i> Objetivo</h2>
+                <p>Criar um <strong>dashboard analítico completo</strong> utilizando exclusivamente <strong>Matplotlib</strong> e <strong>NumPy</strong>, demonstrando a capacidade de construir visualizações profissionais via código Python, sem dependência de ferramentas visuais como Power BI ou Tableau.</p>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-code"></i> Composição do Mosaico</h2>
+                <div class="methodology-grid">
+                    <div class="method-item">
+                        <h3>Gráfico de Linha</h3>
+                        <p>Acompanhamento do crescimento das vendas ao longo dos 12 meses do ano, com marcadores de destaque para o menor valor do período (Março: 78 mil) e indicação visual da zona de retorno ao crescimento.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>Gráfico de Barras Horizontais</h3>
+                        <p>Ranking dos produtos por quantidade vendida, com destaque automático para o produto com maior volume (Produto B: 45 unidades) e remoção de elementos visuais desnecessários.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>Gráfico de Pizza</h3>
+                        <p>Distribuição das categorias de produtos vendidos: Eletrônicos (45%), Roupas (30%), Alimentos (15%) e Livros (10%), com destaque (explode) na categoria principal.</p>
+                    </div>
+                    <div class="method-item">
+                        <h3>Gráfico de Barras Empilhadas</h3>
+                        <p>Comparativo entre vendas Online vs. Loja Física de 2018 a 2021, evidenciando a migração do consumo presencial para o digital ao longo dos anos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-lightbulb"></i> Destaques Técnicos</h2>
+                <ul class="detail-list">
+                    <li>Uso de <strong>subplot_mosaic</strong> para layout responsivo e organizado do mosaico (layout 'AA;BB;CD')</li>
+                    <li>Paleta de cores personalizada com <strong>Pastel2</strong> e <strong>cycler</strong> para consistência visual</li>
+                    <li>Anotações inteligentes com <strong>annotate()</strong> para destaque de valores mínimos e tendências</li>
+                    <li>Destaque visual com <strong>axvspan()</strong> para evidenciar zonas de interesse no gráfico de linha</li>
+                    <li>Remoção de bordas e ticks desnecessários para um design limpo e profissional</li>
+                    <li>Uso de <strong>bar_label()</strong> para rótulos automáticos dentro das barras empilhadas</li>
+                </ul>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-chart-line"></i> Insights do Dashboard</h2>
+                <div class="results-grid">
+                    <div class="result-item">
+                        <span class="result-highlight">+38%</span>
+                        <span class="result-label">Crescimento das vendas de Jan (85k) a Dez (108k)</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-highlight">300%</span>
+                        <span class="result-label">Aumento das vendas online de 2018 a 2021</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-highlight">45%</span>
+                        <span class="result-label">Participação de Eletrônicos no mix de vendas</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-block glass-card">
+                <h2 class="detail-title"><i class="fas fa-wrench"></i> Tecnologias Utilizadas</h2>
+                <div class="tech-tags">
+                    <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+                    <span class="tech-tag"><i class="fas fa-chart-line"></i> Matplotlib</span>
+                    <span class="tech-tag"><i class="fas fa-calculator"></i> NumPy</span>
+                    <span class="tech-tag"><i class="fas fa-palette"></i> Cycler</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-social">
+                    <a href="https://github.com/DosAnjos013" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-dos-anjos-martins-842b7a15b" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://discord.com/users/DosAnjosM" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                </div>
+                <p class="footer-text">&copy; 2025 João Pedro dos Anjos Martins. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var canvas=document.getElementById('particleCanvas');var ctx=canvas.getContext('2d');var particles=[];var mouse={x:null,y:null,radius:150};
+        function resizeCanvas(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}resizeCanvas();window.addEventListener('resize',resizeCanvas);
+        function createParticle(){return{x:Math.random()*canvas.width,y:Math.random()*canvas.height,size:Math.random()*2+0.5,speedX:(Math.random()-0.5)*0.8,speedY:(Math.random()-0.5)*0.8,isRed:Math.random()<0.15,opacity:Math.random()*0.5+0.2};}
+        function updateParticle(p){p.x+=p.speedX;p.y+=p.speedY;if(p.x>canvas.width)p.x=0;if(p.x<0)p.x=canvas.width;if(p.y>canvas.height)p.y=0;if(p.y<0)p.y=canvas.height;if(mouse.x!==null){var dx=mouse.x-p.x,dy=mouse.y-p.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<mouse.radius){var f=(mouse.radius-dist)/mouse.radius;p.x-=dx*f*0.02;p.y-=dy*f*0.02;}}}
+        function drawParticle(p){ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fillStyle=p.isRed?'rgba(230,0,0,'+p.opacity+')':'rgba(255,255,255,'+p.opacity+')';ctx.fill();}
+        function initParticles(){particles=[];var c=Math.min(Math.floor((canvas.width*canvas.height)/8000),150);for(var i=0;i<c;i++)particles.push(createParticle());}initParticles();window.addEventListener('resize',initParticles);
+        function connectParticles(){for(var a=0;a<particles.length;a++)for(var b=a+1;b<particles.length;b++){var dx=particles[a].x-particles[b].x,dy=particles[a].y-particles[b].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){var o=(1-d/120)*0.15;ctx.strokeStyle=(particles[a].isRed||particles[b].isRed)?'rgba(230,0,0,'+o+')':'rgba(255,255,255,'+o+')';ctx.lineWidth=0.5;ctx.beginPath();ctx.moveTo(particles[a].x,particles[a].y);ctx.lineTo(particles[b].x,particles[b].y);ctx.stroke();}}}
+        function animate(){ctx.clearRect(0,0,canvas.width,canvas.height);for(var i=0;i<particles.length;i++){updateParticle(particles[i]);drawParticle(particles[i]);}connectParticles();requestAnimationFrame(animate);}animate();
+        window.addEventListener('mousemove',function(e){mouse.x=e.x;mouse.y=e.y;});window.addEventListener('mouseleave',function(){mouse.x=null;mouse.y=null;});
+        var obsOpts={threshold:0.1,rootMargin:'0px 0px -50px 0px'};var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting)entry.target.classList.add('revealed');});},obsOpts);
+        document.querySelectorAll('.glass-card,.detail-title').forEach(function(el){el.classList.add('reveal');observer.observe(el);});
+    </script>
+</body>
+</html>
